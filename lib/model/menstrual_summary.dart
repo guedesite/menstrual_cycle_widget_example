@@ -194,7 +194,7 @@ class SymptomsPatterns {
 class PredictedSymptomsPatternToday {
   String? symptomName;
   int? occurrences;
-  String? accuracy = "0";
+  double? accuracy = 0;
 
   PredictedSymptomsPatternToday(
       {this.symptomName, this.occurrences, this.accuracy});
