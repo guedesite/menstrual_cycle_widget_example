@@ -7,12 +7,13 @@ class MenstrualCycleSummaryData {
   List<PredictedSymptomsPatternToday>? predictedSymptomsPatternTomorrow;
   List<SymptomsPatterns>? symptomsPatternsReport;
 
-  MenstrualCycleSummaryData(
-      {this.keyMatrix,
-      this.predictionMatrix,
-      this.predictedSymptomsPatternToday,
-      this.predictedSymptomsPatternTomorrow,
-      this.symptomsPatternsReport});
+  MenstrualCycleSummaryData({
+    this.keyMatrix,
+    this.predictionMatrix,
+    this.predictedSymptomsPatternToday,
+    this.predictedSymptomsPatternTomorrow,
+    this.symptomsPatternsReport,
+  });
 
   MenstrualCycleSummaryData.fromJson(Map<String, dynamic> json) {
     keyMatrix = json['key_matrix'] != null
@@ -82,20 +83,21 @@ class KeyMatrix {
   String? periodRegularityScoreStatus;
   double? periodRegularityScore;
 
-  KeyMatrix(
-      {this.currentDayCycle,
-      this.avgCycleLength,
-      this.avgPeriodDuration,
-      this.isPeriodStart,
-      this.periodDay,
-      this.isOvulationDay,
-      this.prevCycleLength,
-      this.prevPeriodDuration,
-      this.cycleRegularityScoreStatus,
-      this.cycleRegularityScore,
-      this.currentPhase,
-      this.periodRegularityScoreStatus,
-      this.periodRegularityScore});
+  KeyMatrix({
+    this.currentDayCycle,
+    this.avgCycleLength,
+    this.avgPeriodDuration,
+    this.isPeriodStart,
+    this.periodDay,
+    this.isOvulationDay,
+    this.prevCycleLength,
+    this.prevPeriodDuration,
+    this.cycleRegularityScoreStatus,
+    this.cycleRegularityScore,
+    this.currentPhase,
+    this.periodRegularityScoreStatus,
+    this.periodRegularityScore,
+  });
 
   KeyMatrix.fromJson(Map<String, dynamic> json) {
     currentDayCycle = json['current_day_cycle'];
@@ -138,11 +140,12 @@ class PredictionMatrix {
   bool? isPeriodStartFromToday;
   bool? isPeriodStartFromTomorrow;
 
-  PredictionMatrix(
-      {this.nextPeriodDay,
-      this.ovulationDay,
-      this.isPeriodStartFromToday,
-      this.isPeriodStartFromTomorrow});
+  PredictionMatrix({
+    this.nextPeriodDay,
+    this.ovulationDay,
+    this.isPeriodStartFromToday,
+    this.isPeriodStartFromTomorrow,
+  });
 
   PredictionMatrix.fromJson(Map<String, dynamic> json) {
     nextPeriodDay = json['next_period_day'];
@@ -179,7 +182,6 @@ class SymptomsPatterns {
     }
   }
 
-  // Convert the object to a JSON-compatible map
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['symptom_name'] = name;
@@ -196,8 +198,11 @@ class PredictedSymptomsPatternToday {
   int? occurrences;
   double? accuracy = 0;
 
-  PredictedSymptomsPatternToday(
-      {this.symptomName, this.occurrences, this.accuracy});
+  PredictedSymptomsPatternToday({
+    this.symptomName,
+    this.occurrences,
+    this.accuracy,
+  });
 
   PredictedSymptomsPatternToday.fromJson(Map<String, dynamic> json) {
     symptomName = json['symptomName'];
@@ -210,7 +215,6 @@ class PredictedSymptomsPatternToday {
     data['symptomName'] = symptomName;
     data['occurrences'] = occurrences;
     data['accuracy'] = accuracy;
-
     return data;
   }
 }
